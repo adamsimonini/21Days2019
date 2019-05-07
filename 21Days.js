@@ -74,7 +74,6 @@ function findModuleIndex(name) {
     let target =  availableModules[i];
     if(target.name == name) {
       if (target.hasOwnProperty('essential')) {
-        console.log('loading ' + name);
         return i;
       }
     }
@@ -83,5 +82,6 @@ function findModuleIndex(name) {
 
 loadModule(findModuleIndex("life-support"));
 loadModule(findModuleIndex("propulsion"));
+loadModule(findModuleIndex("navigation"));
 
 console.log(ship.modules)
