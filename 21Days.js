@@ -44,44 +44,58 @@ var radio = {
 };
 
 // FUNCTIONS
-function powerOn() {
-  ship.powerOn = true;
-}
+// function powerOn() {
+//   ship.powerOn = true;
+// }
 
-powerOn();
+// powerOn();
 
-function countModules() {
-  return availableModules.length;
-}
+// function countModules() {
+//   return availableModules.length;
+// }
 
-function countEssential() {
-  let essentialFlag = 0;
-  for (i=0; i < availableModules.length; i++) {
-    if (availableModules[i].essential) {
-      essentialFlag++;
-    }
-  }
-  return essentialFlag;
-}
+// function countEssential() {
+//   let essentialFlag = 0;
+//   for (i=0; i < availableModules.length; i++) {
+//     if (availableModules[i].essential) {
+//       essentialFlag++;
+//     }
+//   }
+//   return essentialFlag;
+// }
 
-function loadModule(index) {
-  availableModules[index].enabled = true;
-  ship.modules.push(availableModules[index]);
-}
+// function loadModule(index) {
+//   availableModules[index].enabled = true;
+//   ship.modules.push(availableModules[index]);
+// }
 
-function findModuleIndex(name) {
-  for (i=0;i<availableModules.length; i++) {
-    let target =  availableModules[i];
-    if(target.name == name) {
-      if (target.hasOwnProperty('essential')) {
-        return i;
-      }
-    }
-  }
-}
+// function findModuleIndex(name) {
+//   for (i=0;i<availableModules.length; i++) {
+//     let target =  availableModules[i];
+//     if(target.name == name) {
+//       if (target.hasOwnProperty('essential')) {
+//         return i;
+//       }
+//     }
+//   }
+// }
 
-loadModule(findModuleIndex("life-support"));
-loadModule(findModuleIndex("propulsion"));
-loadModule(findModuleIndex("navigation"));
+// loadModule(findModuleIndex("life-support"));
+// loadModule(findModuleIndex("propulsion"));
+// loadModule(findModuleIndex("navigation"));
 
 console.log(ship.modules)
+
+var LARRY = {}
+
+LARRY.quack = function () {
+    console.log('quack');
+}
+
+function resetLARRY() {
+  for (i=0; i < 10; i++){
+    LARRY.quack();
+  }
+}
+
+resetLARRY();
