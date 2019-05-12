@@ -24,8 +24,8 @@ let availableModules = [
 
 var navigation = {
   x: -2,
-  y: "Banana",
-  z: "Beep",
+  y: 4,
+  z: 7,
   speed: "raaaaid"
 };
 
@@ -38,7 +38,11 @@ var ship = {
 };
 
 var radio = {
-  frequency: "Kenneth",
+  range: {
+    low: 88,
+    high: 108,
+  },
+  frequency: 0,
   message: "Bugs are cool.",
   beacon: false
 };
@@ -84,18 +88,31 @@ var radio = {
 // loadModule(findModuleIndex("propulsion"));
 // loadModule(findModuleIndex("navigation"));
 
-console.log(ship.modules)
+// console.log(ship.modules)
 
-var LARRY = {}
+// var LARRY = {}
 
-LARRY.quack = function () {
-    console.log('quack');
+// LARRY.quack = function () {
+//     console.log('quack');
+// }
+
+// function resetLARRY() {
+//   for (i=0; i < 10; i++){
+//     LARRY.quack();
+//   }
+// }
+
+// resetLARRY();
+
+function setFrequency() {
+  let lower = radio.range.low;
+  let upper = radio.range.high;
+  let frequency = ((lower + upper) / 2)
+  radio.frequency = frequency;
 }
 
-function resetLARRY() {
-  for (i=0; i < 10; i++){
-    LARRY.quack();
-  }
-}
+setFrequency();
 
-resetLARRY();
+function initialize() {
+  navigation.x = navigation.y = navigation.z = 0;
+}
